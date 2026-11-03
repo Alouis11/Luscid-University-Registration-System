@@ -69,7 +69,7 @@ CREATE TABLE User (
     Country VARCHAR(50),
     Street_No VARCHAR(10),
     Street_Name VARCHAR(100),
-    Zip_Code VARCHAR(20),
+    Zip_Code VARCHAR(5),
     
     User_Type VARCHAR(30) NOT NULL
 );

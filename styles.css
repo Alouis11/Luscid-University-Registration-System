@@ -1,0 +1,183 @@
+/* --------------------------------------------------------------------- 
+    GLOBAL STYLESHEET - This file contains all styling that is reused 
+    across multiple of the site's pages. 
+   --------------------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    min-height: 100vh;
+}
+
+
+/* ------------------------------------------------------------------------ */
+/* TEXT TYPES */
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+
+/* ------------------------------------------------------------------------ */
+/* BANNER (TOP BAR) */
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 32px;
+
+    background-color: #172554;
+    color: white;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    > a {
+        color: #e2e8f0;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: #60a5fa;
+        }
+    }
+}
+
+
+/* ------------------------------------------------------------------------ */
+/* CONTAINER TYPES */
+
+.modal {
+    width: 420px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    p {
+        font-weight: bold;
+        text-align: center;
+        color: #6b7280;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    h1 {
+        font-weight: bold;
+        text-align: center;
+        color: #123b6d;
+        margin-bottom: 25px;
+    }
+
+    button {
+        width: 100%;
+        padding: 13px;
+        margin-top: 25px;
+
+        background-color: #123b6d;
+        color: white;
+
+        border: none;
+        border-radius: 5px;
+
+        font-size: 16px;
+        font-weight: bold;
+
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: #0d2d52;
+        }
+    }
+    
+    form {
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 7px;
+            color: #374151;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.2s;
+
+            &:focus {
+            border-color: #1d5fa7;
+            box-shadow: 0 0 0 3px rgba(29, 95, 167, 0.12);
+            }
+        }
+    }
+}
+
+
+.screen-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.notif-red {
+    background-color: #f5bcc9;
+    border: 1px solid #e0535a;
+    border-radius: 8px;
+
+    box-shadow: 0px 0px 8px rgba(100, 100, 100, 0.25);
+
+    padding: 12px;
+
+    color: #121225;
+    /* font-weight: bold; */
+    /* text-shadow: 2px 2px 4px #374151; */
+}
+
+
+/* ------------------------------------------------------------------------ */
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .banner {
+        flex-direction: column;
+        gap: 14px;
+        padding: 16px;
+
+        nav {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+    }
+}

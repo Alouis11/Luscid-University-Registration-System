@@ -1,15 +1,5 @@
 <?php
-    // Database configuration
-    $host = '127.0.0.1';
-    $db   = 'registration_system';$user = 'root';
-    $pass = '';$charset = 'utf8mb4';
-
-    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-    $options = [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES   => false,
-    ];
+    require_once '../../db.php';
 
     try {
         $pdo = new PDO($dsn,$user, $pass,$options);
@@ -117,7 +107,7 @@
             $uid =$pdo->lastInsertId();
             $studentIds[] =$uid;
 
-            $loginStmt->execute([$uid, strtolower("$fn.$ln.stu$uid@luscid.edu"), password_hash('password123', PASSWORD_BCRYPT)]);
+            $loginStmt->execute([$uid, strtolower("$fn.$ln.stu$uid@luscid.edu"), password_hash('testpass123!', PASSWORD_BCRYPT)]);
             $studentStmt->execute([$uid, $sTypes[array_rand($sTypes)], $statuses[array_rand($statuses)]]);
 
             if ($i < 15) {

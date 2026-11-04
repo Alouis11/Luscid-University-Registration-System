@@ -351,7 +351,12 @@ CREATE TABLE Student_Major (  -- Relationship between Student & Major (many-to-m
     PRIMARY KEY (Student_ID, Major_ID),
     FOREIGN KEY (Student_ID) REFERENCES Student(Student_ID),
     FOREIGN KEY (Major_ID) REFERENCES Major(Major_ID)
-);
+); 
+
+-- Add support for both majors and minors
+ALTER TABLE Student_Major
+ADD COLUMN Program_Type ENUM('Major', 'Minor')
+NOT NULL DEFAULT 'Major';
 
 CREATE TABLE Student_History (  -- Relationship between Student & Course_Section (many-to-many)
 	Student_ID INT,  -- foreign, primary
